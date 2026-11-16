@@ -497,18 +497,60 @@ func (lex *Lexer) Lex() *token.Token {
 
         halt_compiller_open_parenthesis := |*
             whitespace_line* => {lex.addFreeFloatingToken(tkn, token.T_WHITESPACE, lex.ts, lex.te)};
+            (('#' ^'[') | '//') any_line* when is_not_comment_end => {
+                lex.ungetStr("?>")
+                lex.addFreeFloatingToken(tkn, token.T_COMMENT, lex.ts, lex.te)
+            };
+            '#' => {
+                lex.addFreeFloatingToken(tkn, token.T_COMMENT, lex.ts, lex.te)
+            };
+            '/*' any_line* :>> '*/' {
+                if lex.te - lex.ts > 4 && string(lex.data[lex.ts:lex.ts+3]) == "/**" {
+                    lex.addFreeFloatingToken(tkn, token.T_DOC_COMMENT, lex.ts, lex.te)
+                } else {
+                    lex.addFreeFloatingToken(tkn, token.T_COMMENT, lex.ts, lex.te)
+                }
+            };
             "("              => {lex.setTokenPosition(tkn); tok = token.ID(int('(')); fnext halt_compiller_close_parenthesis; fbreak;};
             any              => {lex.ungetCnt(1); fnext php;};
         *|;
 
         halt_compiller_close_parenthesis := |*
             whitespace_line* => {lex.addFreeFloatingToken(tkn, token.T_WHITESPACE, lex.ts, lex.te)};
+            (('#' ^'[') | '//') any_line* when is_not_comment_end => {
+                lex.ungetStr("?>")
+                lex.addFreeFloatingToken(tkn, token.T_COMMENT, lex.ts, lex.te)
+            };
+            '#' => {
+                lex.addFreeFloatingToken(tkn, token.T_COMMENT, lex.ts, lex.te)
+            };
+            '/*' any_line* :>> '*/' {
+                if lex.te - lex.ts > 4 && string(lex.data[lex.ts:lex.ts+3]) == "/**" {
+                    lex.addFreeFloatingToken(tkn, token.T_DOC_COMMENT, lex.ts, lex.te)
+                } else {
+                    lex.addFreeFloatingToken(tkn, token.T_COMMENT, lex.ts, lex.te)
+                }
+            };
             ")"              => {lex.setTokenPosition(tkn); tok = token.ID(int(')')); fnext halt_compiller_close_semicolon; fbreak;};
             any              => {lex.ungetCnt(1); fnext php;};
         *|;
 
         halt_compiller_close_semicolon := |*
             whitespace_line* => {lex.addFreeFloatingToken(tkn, token.T_WHITESPACE, lex.ts, lex.te)};
+            (('#' ^'[') | '//') any_line* when is_not_comment_end => {
+                lex.ungetStr("?>")
+                lex.addFreeFloatingToken(tkn, token.T_COMMENT, lex.ts, lex.te)
+            };
+            '#' => {
+                lex.addFreeFloatingToken(tkn, token.T_COMMENT, lex.ts, lex.te)
+            };
+            '/*' any_line* :>> '*/' {
+                if lex.te - lex.ts > 4 && string(lex.data[lex.ts:lex.ts+3]) == "/**" {
+                    lex.addFreeFloatingToken(tkn, token.T_DOC_COMMENT, lex.ts, lex.te)
+                } else {
+                    lex.addFreeFloatingToken(tkn, token.T_COMMENT, lex.ts, lex.te)
+                }
+            };
             ";"              => {lex.setTokenPosition(tkn); tok = token.ID(int(';')); fnext halt_compiller_end; fbreak;};
             any              => {lex.ungetCnt(1); fnext php;};
         *|;
