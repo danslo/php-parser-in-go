@@ -150,6 +150,15 @@ func (lex *Lexer) Lex() *token.Token {
                 lex.addFreeFloatingToken(tkn, token.T_OPEN_TAG, lex.ts, lex.ts+5)
                 fnext php;
             };
+            '<?php'i => {
+                // <?php at the end of the input opens PHP code since PHP 7.4;
+                // before a name, <?phpinfo, it is <? and the name.
+                if lex.te != lex.pe {
+                    lex.ungetCnt(3)
+                }
+                lex.addFreeFloatingToken(tkn, token.T_OPEN_TAG, lex.ts, lex.te)
+                fnext php;
+            };
             '<?='i => {
                 lex.setTokenPosition(tkn);
                 tok = token.T_ECHO;
