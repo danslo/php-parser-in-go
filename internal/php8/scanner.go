@@ -2420,7 +2420,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line internal/php8/scanner.rl:144
 		(lex.p) = (lex.te) - 1
 		{
-			lex.addFreeFloatingToken(tkn, token.T_OPEN_TAG, lex.ts, lex.te)
+			lex.addOpenTagToken(tkn)
 			lex.cs = 123
 		}
 		goto _again
@@ -2472,7 +2472,7 @@ func (lex *Lexer) Lex() *token.Token {
 		lex.te = (lex.p)
 		(lex.p)--
 		{
-			lex.addFreeFloatingToken(tkn, token.T_OPEN_TAG, lex.ts, lex.te)
+			lex.addOpenTagToken(tkn)
 			lex.cs = 123
 		}
 		goto _again
