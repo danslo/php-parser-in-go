@@ -405,13 +405,8 @@ func TestShebang(test *testing.T) {
 	assert.DeepEqual(test, expected, actual)
 }
 
-<<<<<<< HEAD
 func TestOpenTagAtEnd(test *testing.T) {
 	src := `<?php echo 1 ?><?php`
-=======
-func TestHaltCompilerComments(test *testing.T) {
-	src := "<?php __halt_compiler/* a */ /** b */( // c\n) # d\n;\x00/*data"
->>>>>>> fix-halt-compiler-comments
 
 	config := conf.Config{
 		Version: &version.Version{
@@ -432,7 +427,6 @@ func TestHaltCompilerComments(test *testing.T) {
 		ids = append(ids, tkn.ID)
 	}
 
-<<<<<<< HEAD
 	assert.DeepEqual(test, []token.ID{token.T_ECHO, token.T_LNUMBER, token.ID(';')}, ids)
 	assert.Equal(test, token.T_OPEN_TAG, last.FreeFloating[0].ID)
 	assert.Equal(test, "<?php", string(last.FreeFloating[0].Value))
@@ -453,10 +447,6 @@ func TestShortOpenTagBeforeName(test *testing.T) {
 	assert.Equal(test, token.T_STRING, tkn.ID)
 	assert.Equal(test, "phpinfo", string(tkn.Value))
 	assert.Equal(test, "<?", string(tkn.FreeFloating[0].Value))
-=======
-	assert.DeepEqual(test, []token.ID{token.T_HALT_COMPILER, token.ID('('), token.ID(')'), token.ID(';')}, ids)
-	assert.Equal(test, "\x00/*data", string(last.FreeFloating[len(last.FreeFloating)-1].Value))
->>>>>>> fix-halt-compiler-comments
 }
 
 func TestShebangHtml(test *testing.T) {
