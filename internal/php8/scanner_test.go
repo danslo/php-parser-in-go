@@ -405,8 +405,13 @@ func TestShebang(test *testing.T) {
 	assert.DeepEqual(test, expected, actual)
 }
 
+<<<<<<< HEAD
 func TestOpenTagAtEnd(test *testing.T) {
 	src := `<?php echo 1 ?><?php`
+=======
+func TestHaltCompilerComments(test *testing.T) {
+	src := "<?php __halt_compiler/* a */ /** b */( // c\n) # d\n;\x00/*data"
+>>>>>>> fix-halt-compiler-comments
 
 	config := conf.Config{
 		Version: &version.Version{
@@ -427,6 +432,7 @@ func TestOpenTagAtEnd(test *testing.T) {
 		ids = append(ids, tkn.ID)
 	}
 
+<<<<<<< HEAD
 	assert.DeepEqual(test, []token.ID{token.T_ECHO, token.T_LNUMBER, token.ID(';')}, ids)
 	assert.Equal(test, token.T_OPEN_TAG, last.FreeFloating[0].ID)
 	assert.Equal(test, "<?php", string(last.FreeFloating[0].Value))
@@ -447,32 +453,10 @@ func TestShortOpenTagBeforeName(test *testing.T) {
 	assert.Equal(test, token.T_STRING, tkn.ID)
 	assert.Equal(test, "phpinfo", string(tkn.Value))
 	assert.Equal(test, "<?", string(tkn.FreeFloating[0].Value))
-}
-
-func TestHaltCompilerComments(test *testing.T) {
-	src := "<?php __halt_compiler/* a */ /** b */( // c\n) # d\n;\x00/*data"
-
-	config := conf.Config{
-		Version: &version.Version{
-			Major: 8,
-			Minor: 0,
-		},
-	}
-	lexer := NewLexer([]byte(src), config)
-
-	ids := []token.ID{}
-	var last *token.Token
-	for {
-		tkn := lexer.Lex()
-		if tkn.ID == 0 {
-			last = tkn
-			break
-		}
-		ids = append(ids, tkn.ID)
-	}
-
+=======
 	assert.DeepEqual(test, []token.ID{token.T_HALT_COMPILER, token.ID('('), token.ID(')'), token.ID(';')}, ids)
 	assert.Equal(test, "\x00/*data", string(last.FreeFloating[len(last.FreeFloating)-1].Value))
+>>>>>>> fix-halt-compiler-comments
 }
 
 func TestShebangHtml(test *testing.T) {
@@ -2115,4 +2099,51 @@ func TestTripleDollar(test *testing.T) {
 	tkn = lexer.Lex()
 	actual = string(tkn.Value)
 	assert.DeepEqual(test, expected, actual)
+}
+
+func TestLoneCarriageReturn(test *testing.T) {
+	src := "<?php\r$a\r= 1;\r"
+
+	type lexed struct {
+		ID           token.ID
+		Value        string
+		StartLine    int
+		FreeFloating string
+	}
+	expected := []lexed{
+		{ID: token.T_VARIABLE, Value: "$a", StartLine: 2, FreeFloating: "<?php\r"},
+		{ID: token.ID('='), Value: "=", StartLine: 3, FreeFloating: "\r"},
+		{ID: token.T_LNUMBER, Value: "1", StartLine: 3, FreeFloating: " "},
+		{ID: token.ID(';'), Value: ";", StartLine: 3},
+		{FreeFloating: "\r"},
+	}
+
+	var errs []*errors.Error
+	config := conf.Config{
+		Version: &version.Version{
+			Major: 8,
+			Minor: 4,
+		},
+		ErrorHandlerFunc: func(e *errors.Error) {
+			errs = append(errs, e)
+		},
+	}
+	lexer := NewLexer([]byte(src), config)
+
+	var actual []lexed
+	for {
+		tkn := lexer.Lex()
+		freeFloating := ""
+		for _, ff := range tkn.FreeFloating {
+			freeFloating += string(ff.Value)
+		}
+		if tkn.ID == 0 {
+			actual = append(actual, lexed{FreeFloating: freeFloating})
+			break
+		}
+		actual = append(actual, lexed{ID: tkn.ID, Value: string(tkn.Value), StartLine: tkn.Position.StartLine, FreeFloating: freeFloating})
+	}
+
+	assert.DeepEqual(test, expected, actual)
+	assert.Equal(test, len(errs), 0)
 }
