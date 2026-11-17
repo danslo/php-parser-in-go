@@ -52,3 +52,38 @@ func TestFormatter_NewlineAfterCloseTag(test *testing.T) {
 		test.Errorf("\nexpected: %q\ngot: %q\n", expected, got)
 	}
 }
+
+// print lays out a tree built without tokens and prints it.
+func print(root *ast.Root) string {
+	root.Accept(formatter.NewFormatter())
+	var buffer bytes.Buffer
+	root.Accept(printer.NewPrinter(&buffer))
+	return buffer.String()
+}
+
+func echo(value string) ast.Vertex {
+	return &ast.StmtEcho{Exprs: []ast.Vertex{&ast.ScalarLnumber{Value: []byte(value)}}}
+}
+
+func variable(name string) ast.Vertex {
+	return &ast.ExprVariable{Name: &ast.Identifier{Value: []byte("$" + name)}}
+}
+
+func TestFormatter_BracesDanglingElse(test *testing.T) {
+	inner := &ast.StmtIf{Cond: variable("a"), Stmt: echo("1")}
+	loop := &ast.StmtWhile{Cond: variable("b"), Stmt: &ast.StmtIf{Cond: variable("c"), Stmt: echo("2")}}
+	root := &ast.Root{Stmts: []ast.Vertex{
+		&ast.StmtIf{Cond: variable("p"), Stmt: inner, Else: &ast.StmtElse{Stmt: echo("3")}},
+		&ast.StmtIf{
+			Cond:   variable("q"),
+			Stmt:   echo("4"),
+			ElseIf: []ast.Vertex{&ast.StmtElseIf{Cond: variable("r"), Stmt: loop}},
+			Else:   &ast.StmtElse{Stmt: echo("5")},
+		},
+	}}
+	got := print(root)
+	expected := "<?php\n\nif ($p) {\n    if ($a) echo 1;\n} else echo 3;\nif ($q) echo 4; elseif ($r) {\n    while($b) if ($c) echo 2;\n} else echo 5;"
+	if got != expected {
+		test.Errorf("\nexpected: %q\ngot: %q\n", expected, got)
+	}
+}

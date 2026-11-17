@@ -1177,7 +1177,7 @@ func TestFormatter_StmtElseIf(test *testing.T) {
 	printerValue := printer.NewPrinter(buffer).WithState(printer.PrinterStatePHP)
 	node.Accept(printerValue)
 
-	expected := `elseif($var) {
+	expected := `elseif ($var) {
         ;
     }`
 	actual := buffer.String()
@@ -1709,9 +1709,9 @@ func TestFormatter_StmtIf_ElseIf(test *testing.T) {
 
 	expected := `if ($foo) {
         ;
-    } elseif($bar) {
+    } elseif ($bar) {
         ;
-    } elseif($baz) {
+    } elseif ($baz) {
         ;
     }`
 	actual := buffer.String()
