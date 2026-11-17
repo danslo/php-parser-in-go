@@ -462,6 +462,15 @@ func (printer *printer) StmtInlineHtml(node *ast.StmtInlineHtml) {
 	if printer.state == PrinterStatePHP && printer.last != nil && !bytes.HasSuffix(printer.last, []byte("?>")) && !bytes.HasSuffix(printer.last, []byte("?>\n")) {
 		printer.write([]byte("?>"))
 	}
+	// PHP drops one newline right after ?>: one the HTML starts with
+	// takes another.
+	html := node.Value
+	if node.InlineHtmlTkn != nil {
+		html = node.InlineHtmlTkn.Value
+	}
+	if bytes.HasSuffix(printer.last, []byte("?>")) && (bytes.HasPrefix(html, []byte("\n")) || bytes.HasPrefix(html, []byte("\r\n"))) {
+		printer.write([]byte("\n"))
+	}
 	// The HTML itself is written as is, without an open tag.
 	printer.state = PrinterStatePHP
 

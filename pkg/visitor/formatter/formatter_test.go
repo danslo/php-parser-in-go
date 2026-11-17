@@ -25,7 +25,7 @@ func TestFormatter_Root(test *testing.T) {
 	printerValue := printer.NewPrinter(buffer)
 	node.Accept(printerValue)
 
-	expected := `<?php 
+	expected := `<?php
 
 ;`
 	actual := buffer.String()
@@ -56,7 +56,7 @@ func TestFormatter_Root_TrailingOpenTag(test *testing.T) {
 	printerValue := printer.NewPrinter(buffer)
 	node.Accept(printerValue)
 
-	expected := `<?php 
+	expected := `<?php
 
 ;// trailing`
 	actual := buffer.String()
@@ -1797,11 +1797,11 @@ func TestFormatter_StmtInlineHtml(test *testing.T) {
 	printerValue := printer.NewPrinter(buffer)
 	node.Accept(printerValue)
 
-	expected := `<?php 
+	expected := `<?php
 
 {
-    ;?><div></div><?php 
-    echo $foo;?><div></div><?php 
+    ;?><div></div><?php
+    echo $foo;?><div></div><?php
     ;
 }`
 	actual := buffer.String()
@@ -1843,7 +1843,7 @@ func TestFormatter_RootStartingWithInlineHtml(test *testing.T) {
 	printerValue := printer.NewPrinter(buffer)
 	node.Accept(printerValue)
 
-	expected := `<b><i><?php 
+	expected := `<b><i><?php
 echo $foo;?></b>`
 	actual := buffer.String()
 
@@ -2321,7 +2321,7 @@ func TestFormatter_StmtStmtList(test *testing.T) {
 	printerValue := printer.NewPrinter(buffer)
 	node.Accept(printerValue)
 
-	expected := `<?php 
+	expected := `<?php
 
 {
     {
