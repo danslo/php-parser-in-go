@@ -87,3 +87,26 @@ func TestFormatter_BracesDanglingElse(test *testing.T) {
 		test.Errorf("\nexpected: %q\ngot: %q\n", expected, got)
 	}
 }
+
+// Before PHP 7.3 nothing may follow a heredoc's closing label on its line
+// but a semicolon.
+func TestFormatter_HeredocArgumentEndsLine(test *testing.T) {
+	got := format(test, "<?php echo strtoupper(<<<EOT\nabc\nEOT\n), 1;")
+	expected := "<?php\n\necho strtoupper(<<<EOT\nabc\nEOT\n), 1;"
+	if got != expected {
+		test.Errorf("\nexpected: %q\ngot: %q\n", expected, got)
+	}
+}
+
+// Adjacent HTML prints as the text it is, without a separator.
+func TestFormatter_AdjacentHTML(test *testing.T) {
+	root := &ast.Root{Stmts: []ast.Vertex{
+		&ast.StmtInlineHtml{Value: []byte("<b>Hello")},
+		&ast.StmtInlineHtml{Value: []byte("World</b>")},
+	}}
+	got := print(root)
+	expected := "<b>HelloWorld</b>"
+	if got != expected {
+		test.Errorf("\nexpected: %q\ngot: %q\n", expected, got)
+	}
+}
