@@ -9,7 +9,7 @@ import (
 	"github.com/rectorphp/php-parser-in-go/pkg/token"
 )
 
-// line internal/scanner/scanner.go:13
+// line internal/scanner/scanner.go:15
 const lexer_start int = 105
 const lexer_first_final int = 105
 const lexer_error int = 0
@@ -35,7 +35,7 @@ const lexer_en_halt_compiller_end int = 527
 
 func initLexer(lex *Lexer) {
 
-	// line internal/scanner/scanner.go:39
+	// line internal/scanner/scanner.go:43
 	{
 		lex.cs = lexer_start
 		lex.top = 0
@@ -58,7 +58,7 @@ func (lex *Lexer) Lex() *token.Token {
 
 	_, _ = lblStart, lblEnd
 
-	// line internal/scanner/scanner.go:61
+	// line internal/scanner/scanner.go:67
 	{
 		var _widec int16
 		if (lex.p) == (lex.pe) {
@@ -2250,7 +2250,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:2253
+		// line internal/scanner/scanner.go:2259
 		if lex.data[(lex.p)] == 35 {
 			goto tr159
 		}
@@ -2265,7 +2265,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof106
 		}
 	st_case_106:
-		// line internal/scanner/scanner.go:2268
+		// line internal/scanner/scanner.go:2274
 		if lex.data[(lex.p)] == 33 {
 			goto st1
 		}
@@ -2299,7 +2299,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof107
 		}
 	st_case_107:
-		// line internal/scanner/scanner.go:2302
+		// line internal/scanner/scanner.go:2308
 		goto tr161
 	tr3:
 		// line internal/scanner/scanner.rl:38
@@ -2318,7 +2318,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof108
 		}
 	st_case_108:
-		// line internal/scanner/scanner.go:2321
+		// line internal/scanner/scanner.go:2327
 		if lex.data[(lex.p)] == 10 {
 			goto tr2
 		}
@@ -2422,7 +2422,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:2414
+		// line internal/scanner/scanner.go:2420
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr163
@@ -2441,7 +2441,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof110
 		}
 	st_case_110:
-		// line internal/scanner/scanner.go:2433
+		// line internal/scanner/scanner.go:2439
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr163
@@ -2496,7 +2496,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof111
 		}
 	st_case_111:
-		// line internal/scanner/scanner.go:2488
+		// line internal/scanner/scanner.go:2494
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr170
@@ -2537,7 +2537,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof112
 		}
 	st_case_112:
-		// line internal/scanner/scanner.go:2529
+		// line internal/scanner/scanner.go:2535
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr173
@@ -2556,7 +2556,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof113
 		}
 	st_case_113:
-		// line internal/scanner/scanner.go:2548
+		// line internal/scanner/scanner.go:2554
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr163
@@ -2594,7 +2594,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof115
 		}
 	st_case_115:
-		// line internal/scanner/scanner.go:2586
+		// line internal/scanner/scanner.go:2592
 		switch lex.data[(lex.p)] {
 		case 61:
 			goto tr176
@@ -2661,7 +2661,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof116
 		}
 	st_case_116:
-		// line internal/scanner/scanner.go:2653
+		// line internal/scanner/scanner.go:2659
 		goto tr178
 	tr9:
 		// line internal/scanner/scanner.rl:38
@@ -2680,7 +2680,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof117
 		}
 	st_case_117:
-		// line internal/scanner/scanner.go:2672
+		// line internal/scanner/scanner.go:2678
 		if lex.data[(lex.p)] == 10 {
 			goto tr8
 		}
@@ -4619,7 +4619,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:3503
+		// line internal/scanner/scanner.go:3509
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr181
@@ -4804,7 +4804,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof119
 		}
 	st_case_119:
-		// line internal/scanner/scanner.go:3688
+		// line internal/scanner/scanner.go:3694
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr181
@@ -4862,7 +4862,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof120
 		}
 	st_case_120:
-		// line internal/scanner/scanner.go:3746
+		// line internal/scanner/scanner.go:3752
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr236
@@ -4906,7 +4906,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof121
 		}
 	st_case_121:
-		// line internal/scanner/scanner.go:3790
+		// line internal/scanner/scanner.go:3796
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr238
@@ -4936,7 +4936,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof122
 		}
 	st_case_122:
-		// line internal/scanner/scanner.go:3820
+		// line internal/scanner/scanner.go:3826
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr238
@@ -4979,7 +4979,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof125
 		}
 	st_case_125:
-		// line internal/scanner/scanner.go:3863
+		// line internal/scanner/scanner.go:3869
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr12
@@ -5012,7 +5012,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof5
 		}
 	st_case_5:
-		// line internal/scanner/scanner.go:3896
+		// line internal/scanner/scanner.go:3902
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr12
@@ -5099,7 +5099,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof126
 		}
 	st_case_126:
-		// line internal/scanner/scanner.go:3983
+		// line internal/scanner/scanner.go:3989
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -5193,7 +5193,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof127
 		}
 	st_case_127:
-		// line internal/scanner/scanner.go:4077
+		// line internal/scanner/scanner.go:4083
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -5273,7 +5273,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof128
 		}
 	st_case_128:
-		// line internal/scanner/scanner.go:4157
+		// line internal/scanner/scanner.go:4163
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -5400,7 +5400,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof133
 		}
 	st_case_133:
-		// line internal/scanner/scanner.go:4284
+		// line internal/scanner/scanner.go:4290
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr19
@@ -5429,7 +5429,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof9
 		}
 	st_case_9:
-		// line internal/scanner/scanner.go:4313
+		// line internal/scanner/scanner.go:4319
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr19
@@ -5463,7 +5463,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof134
 		}
 	st_case_134:
-		// line internal/scanner/scanner.go:4347
+		// line internal/scanner/scanner.go:4353
 		switch lex.data[(lex.p)] {
 		case 9:
 			goto st11
@@ -6311,7 +6311,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof139
 		}
 	st_case_139:
-		// line internal/scanner/scanner.go:5195
+		// line internal/scanner/scanner.go:5201
 		switch lex.data[(lex.p)] {
 		case 46:
 			goto st65
@@ -6343,7 +6343,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof140
 		}
 	st_case_140:
-		// line internal/scanner/scanner.go:5227
+		// line internal/scanner/scanner.go:5233
 		switch lex.data[(lex.p)] {
 		case 69:
 			goto st66
@@ -6392,7 +6392,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof141
 		}
 	st_case_141:
-		// line internal/scanner/scanner.go:5276
+		// line internal/scanner/scanner.go:5282
 		if lex.data[(lex.p)] == 95 {
 			goto st67
 		}
@@ -6419,7 +6419,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof142
 		}
 	st_case_142:
-		// line internal/scanner/scanner.go:5303
+		// line internal/scanner/scanner.go:5309
 		switch lex.data[(lex.p)] {
 		case 42:
 			goto st69
@@ -6438,7 +6438,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof69
 		}
 	st_case_69:
-		// line internal/scanner/scanner.go:5322
+		// line internal/scanner/scanner.go:5328
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr89
@@ -6493,7 +6493,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof70
 		}
 	st_case_70:
-		// line internal/scanner/scanner.go:5377
+		// line internal/scanner/scanner.go:5383
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr93
@@ -6534,7 +6534,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof71
 		}
 	st_case_71:
-		// line internal/scanner/scanner.go:5418
+		// line internal/scanner/scanner.go:5424
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr96
@@ -6553,7 +6553,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof72
 		}
 	st_case_72:
-		// line internal/scanner/scanner.go:5437
+		// line internal/scanner/scanner.go:5443
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr89
@@ -6577,7 +6577,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof143
 		}
 	st_case_143:
-		// line internal/scanner/scanner.go:5461
+		// line internal/scanner/scanner.go:5467
 		switch lex.data[(lex.p)] {
 		case 46:
 			goto tr274
@@ -6608,7 +6608,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof144
 		}
 	st_case_144:
-		// line internal/scanner/scanner.go:5492
+		// line internal/scanner/scanner.go:5498
 		switch lex.data[(lex.p)] {
 		case 69:
 			goto st66
@@ -6631,7 +6631,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof145
 		}
 	st_case_145:
-		// line internal/scanner/scanner.go:5515
+		// line internal/scanner/scanner.go:5521
 		switch lex.data[(lex.p)] {
 		case 46:
 			goto tr274
@@ -6676,7 +6676,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof146
 		}
 	st_case_146:
-		// line internal/scanner/scanner.go:5560
+		// line internal/scanner/scanner.go:5566
 		if lex.data[(lex.p)] == 95 {
 			goto st74
 		}
@@ -6714,7 +6714,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof147
 		}
 	st_case_147:
-		// line internal/scanner/scanner.go:5598
+		// line internal/scanner/scanner.go:5604
 		if lex.data[(lex.p)] == 95 {
 			goto st75
 		}
@@ -6750,7 +6750,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof149
 		}
 	st_case_149:
-		// line internal/scanner/scanner.go:5634
+		// line internal/scanner/scanner.go:5640
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr103
@@ -6774,7 +6774,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof76
 		}
 	st_case_76:
-		// line internal/scanner/scanner.go:5658
+		// line internal/scanner/scanner.go:5664
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr103
@@ -6834,7 +6834,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof77
 		}
 	st_case_77:
-		// line internal/scanner/scanner.go:5718
+		// line internal/scanner/scanner.go:5724
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr107
@@ -6880,7 +6880,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof78
 		}
 	st_case_78:
-		// line internal/scanner/scanner.go:5764
+		// line internal/scanner/scanner.go:5770
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr110
@@ -6904,7 +6904,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof79
 		}
 	st_case_79:
-		// line internal/scanner/scanner.go:5788
+		// line internal/scanner/scanner.go:5794
 		if lex.data[(lex.p)] == 62 {
 			goto st150
 		}
@@ -6938,7 +6938,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof151
 		}
 	st_case_151:
-		// line internal/scanner/scanner.go:5822
+		// line internal/scanner/scanner.go:5828
 		goto tr284
 	tr283:
 		// line internal/scanner/scanner.rl:38
@@ -6957,7 +6957,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof152
 		}
 	st_case_152:
-		// line internal/scanner/scanner.go:5841
+		// line internal/scanner/scanner.go:5847
 		if lex.data[(lex.p)] == 10 {
 			goto tr282
 		}
@@ -6988,7 +6988,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof154
 		}
 	st_case_154:
-		// line internal/scanner/scanner.go:5872
+		// line internal/scanner/scanner.go:5878
 		switch lex.data[(lex.p)] {
 		case 60:
 			goto st80
@@ -7056,7 +7056,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof82
 		}
 	st_case_82:
-		// line internal/scanner/scanner.go:5940
+		// line internal/scanner/scanner.go:5946
 		switch lex.data[(lex.p)] {
 		case 34:
 			goto tr117
@@ -7090,7 +7090,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof83
 		}
 	st_case_83:
-		// line internal/scanner/scanner.go:5974
+		// line internal/scanner/scanner.go:5980
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr119
@@ -7129,7 +7129,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof155
 		}
 	st_case_155:
-		// line internal/scanner/scanner.go:6013
+		// line internal/scanner/scanner.go:6019
 		goto tr290
 	tr120:
 		// line internal/scanner/scanner.rl:38
@@ -7162,7 +7162,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof156
 		}
 	st_case_156:
-		// line internal/scanner/scanner.go:6046
+		// line internal/scanner/scanner.go:6052
 		if lex.data[(lex.p)] == 10 {
 			goto tr119
 		}
@@ -7197,7 +7197,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof85
 		}
 	st_case_85:
-		// line internal/scanner/scanner.go:6081
+		// line internal/scanner/scanner.go:6087
 		switch lex.data[(lex.p)] {
 		case 39:
 			goto tr117
@@ -7231,7 +7231,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof86
 		}
 	st_case_86:
-		// line internal/scanner/scanner.go:6115
+		// line internal/scanner/scanner.go:6121
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr123
@@ -7350,7 +7350,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof164
 		}
 	st_case_164:
-		// line internal/scanner/scanner.go:6234
+		// line internal/scanner/scanner.go:6240
 		goto tr306
 	tr305:
 		// line internal/scanner/scanner.rl:38
@@ -7369,7 +7369,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof165
 		}
 	st_case_165:
-		// line internal/scanner/scanner.go:6253
+		// line internal/scanner/scanner.go:6259
 		if lex.data[(lex.p)] == 10 {
 			goto tr304
 		}
@@ -7914,7 +7914,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof168
 		}
 	st_case_168:
-		// line internal/scanner/scanner.go:6798
+		// line internal/scanner/scanner.go:6804
 		if lex.data[(lex.p)] == 96 {
 			goto tr10
 		}
@@ -8258,7 +8258,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof179
 		}
 	st_case_179:
-		// line internal/scanner/scanner.go:7142
+		// line internal/scanner/scanner.go:7148
 		switch lex.data[(lex.p)] {
 		case 34:
 			goto st5
@@ -15252,7 +15252,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof399
 		}
 	st_case_399:
-		// line internal/scanner/scanner.go:14136
+		// line internal/scanner/scanner.go:14142
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr130
@@ -15299,7 +15299,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof89
 		}
 	st_case_89:
-		// line internal/scanner/scanner.go:14183
+		// line internal/scanner/scanner.go:14189
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr130
@@ -15361,7 +15361,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof90
 		}
 	st_case_90:
-		// line internal/scanner/scanner.go:14245
+		// line internal/scanner/scanner.go:14251
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr134
@@ -15409,7 +15409,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof91
 		}
 	st_case_91:
-		// line internal/scanner/scanner.go:14293
+		// line internal/scanner/scanner.go:14299
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr137
@@ -15435,7 +15435,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof92
 		}
 	st_case_92:
-		// line internal/scanner/scanner.go:14319
+		// line internal/scanner/scanner.go:14325
 		switch lex.data[(lex.p)] {
 		case 82:
 			goto st93
@@ -17523,7 +17523,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:16377
+		// line internal/scanner/scanner.go:16383
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr667
@@ -17568,7 +17568,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof468
 		}
 	st_case_468:
-		// line internal/scanner/scanner.go:16422
+		// line internal/scanner/scanner.go:16428
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr667
@@ -17626,7 +17626,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof469
 		}
 	st_case_469:
-		// line internal/scanner/scanner.go:16480
+		// line internal/scanner/scanner.go:16486
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr674
@@ -17670,7 +17670,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof470
 		}
 	st_case_470:
-		// line internal/scanner/scanner.go:16524
+		// line internal/scanner/scanner.go:16530
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr676
@@ -17774,7 +17774,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:16617
+		// line internal/scanner/scanner.go:16623
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -17848,7 +17848,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof474
 		}
 	st_case_474:
-		// line internal/scanner/scanner.go:16691
+		// line internal/scanner/scanner.go:16697
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -17942,7 +17942,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof475
 		}
 	st_case_475:
-		// line internal/scanner/scanner.go:16785
+		// line internal/scanner/scanner.go:16791
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -18022,7 +18022,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof476
 		}
 	st_case_476:
-		// line internal/scanner/scanner.go:16865
+		// line internal/scanner/scanner.go:16871
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -18196,7 +18196,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:16997
+		// line internal/scanner/scanner.go:17003
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -18306,7 +18306,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof479
 		}
 	st_case_479:
-		// line internal/scanner/scanner.go:17107
+		// line internal/scanner/scanner.go:17113
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -18400,7 +18400,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof480
 		}
 	st_case_480:
-		// line internal/scanner/scanner.go:17201
+		// line internal/scanner/scanner.go:17207
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -18480,7 +18480,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof481
 		}
 	st_case_481:
-		// line internal/scanner/scanner.go:17281
+		// line internal/scanner/scanner.go:17287
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -18793,7 +18793,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:17524
+		// line internal/scanner/scanner.go:17530
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -18936,7 +18936,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof485
 		}
 	st_case_485:
-		// line internal/scanner/scanner.go:17667
+		// line internal/scanner/scanner.go:17673
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -19030,7 +19030,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof486
 		}
 	st_case_486:
-		// line internal/scanner/scanner.go:17761
+		// line internal/scanner/scanner.go:17767
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -19110,7 +19110,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof487
 		}
 	st_case_487:
-		// line internal/scanner/scanner.go:17841
+		// line internal/scanner/scanner.go:17847
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -19464,7 +19464,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:18125
+		// line internal/scanner/scanner.go:18131
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -19607,7 +19607,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof491
 		}
 	st_case_491:
-		// line internal/scanner/scanner.go:18268
+		// line internal/scanner/scanner.go:18274
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -19701,7 +19701,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof492
 		}
 	st_case_492:
-		// line internal/scanner/scanner.go:18362
+		// line internal/scanner/scanner.go:18368
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -19781,7 +19781,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof493
 		}
 	st_case_493:
-		// line internal/scanner/scanner.go:18442
+		// line internal/scanner/scanner.go:18448
 		_widec = int16(lex.data[(lex.p)])
 		switch {
 		case lex.data[(lex.p)] < 11:
@@ -20011,7 +20011,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:18669
+		// line internal/scanner/scanner.go:18675
 		if lex.data[(lex.p)] == 96 {
 			goto st0
 		}
@@ -20136,11 +20136,8 @@ func (lex *Lexer) Lex() *token.Token {
 		{
 			lex.setTokenPosition(tkn)
 			tok = token.T_STRING
-			{
-				(lex.p)++
-				lex.cs = 498
-				goto _out
-			}
+			lex.ret(1)
+			goto _out
 		}
 		goto st498
 	st498:
@@ -20154,7 +20151,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:18761
+		// line internal/scanner/scanner.go:18767
 		switch lex.data[(lex.p)] {
 		case 36:
 			goto st499
@@ -20235,7 +20232,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof501
 		}
 	st_case_501:
-		// line internal/scanner/scanner.go:18842
+		// line internal/scanner/scanner.go:18848
 		if lex.data[(lex.p)] == 62 {
 			goto st100
 		}
@@ -20421,7 +20418,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:18965
+		// line internal/scanner/scanner.go:18971
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr759
@@ -20503,7 +20500,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof504
 		}
 	st_case_504:
-		// line internal/scanner/scanner.go:19047
+		// line internal/scanner/scanner.go:19053
 		goto tr766
 	tr760:
 		// line internal/scanner/scanner.rl:38
@@ -20522,7 +20519,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof505
 		}
 	st_case_505:
-		// line internal/scanner/scanner.go:19066
+		// line internal/scanner/scanner.go:19072
 		if lex.data[(lex.p)] == 10 {
 			goto tr759
 		}
@@ -20584,7 +20581,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof508
 		}
 	st_case_508:
-		// line internal/scanner/scanner.go:19128
+		// line internal/scanner/scanner.go:19134
 		switch lex.data[(lex.p)] {
 		case 95:
 			goto st101
@@ -20607,7 +20604,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof509
 		}
 	st_case_509:
-		// line internal/scanner/scanner.go:19151
+		// line internal/scanner/scanner.go:19157
 		if lex.data[(lex.p)] == 95 {
 			goto st101
 		}
@@ -20643,7 +20640,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof510
 		}
 	st_case_510:
-		// line internal/scanner/scanner.go:19187
+		// line internal/scanner/scanner.go:19193
 		if lex.data[(lex.p)] == 95 {
 			goto st102
 		}
@@ -20679,7 +20676,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof511
 		}
 	st_case_511:
-		// line internal/scanner/scanner.go:19223
+		// line internal/scanner/scanner.go:19229
 		if lex.data[(lex.p)] == 95 {
 			goto st103
 		}
@@ -20776,7 +20773,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:19302
+		// line internal/scanner/scanner.go:19308
 		if lex.data[(lex.p)] == 96 {
 			goto tr775
 		}
@@ -20803,7 +20800,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof514
 		}
 	st_case_514:
-		// line internal/scanner/scanner.go:19329
+		// line internal/scanner/scanner.go:19335
 		switch lex.data[(lex.p)] {
 		case 91:
 			goto tr157
@@ -20913,7 +20910,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:19424
+		// line internal/scanner/scanner.go:19430
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr780
@@ -20937,7 +20934,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof516
 		}
 	st_case_516:
-		// line internal/scanner/scanner.go:19448
+		// line internal/scanner/scanner.go:19454
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr780
@@ -20995,7 +20992,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof517
 		}
 	st_case_517:
-		// line internal/scanner/scanner.go:19506
+		// line internal/scanner/scanner.go:19512
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr786
@@ -21039,7 +21036,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof518
 		}
 	st_case_518:
-		// line internal/scanner/scanner.go:19550
+		// line internal/scanner/scanner.go:19556
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr788
@@ -21104,7 +21101,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:19600
+		// line internal/scanner/scanner.go:19606
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr791
@@ -21128,7 +21125,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof520
 		}
 	st_case_520:
-		// line internal/scanner/scanner.go:19624
+		// line internal/scanner/scanner.go:19630
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr791
@@ -21186,7 +21183,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof521
 		}
 	st_case_521:
-		// line internal/scanner/scanner.go:19682
+		// line internal/scanner/scanner.go:19688
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr797
@@ -21230,7 +21227,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof522
 		}
 	st_case_522:
-		// line internal/scanner/scanner.go:19726
+		// line internal/scanner/scanner.go:19732
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr799
@@ -21295,7 +21292,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:19776
+		// line internal/scanner/scanner.go:19782
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr802
@@ -21319,7 +21316,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof524
 		}
 	st_case_524:
-		// line internal/scanner/scanner.go:19800
+		// line internal/scanner/scanner.go:19806
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr802
@@ -21377,7 +21374,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof525
 		}
 	st_case_525:
-		// line internal/scanner/scanner.go:19858
+		// line internal/scanner/scanner.go:19864
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr808
@@ -21421,7 +21418,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof526
 		}
 	st_case_526:
-		// line internal/scanner/scanner.go:19902
+		// line internal/scanner/scanner.go:19908
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr810
@@ -21475,7 +21472,7 @@ func (lex *Lexer) Lex() *token.Token {
 		// line NONE:1
 		lex.ts = (lex.p)
 
-		// line internal/scanner/scanner.go:19948
+		// line internal/scanner/scanner.go:19954
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr812
@@ -21504,7 +21501,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof528
 		}
 	st_case_528:
-		// line internal/scanner/scanner.go:19977
+		// line internal/scanner/scanner.go:19983
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr812
@@ -21557,7 +21554,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof529
 		}
 	st_case_529:
-		// line internal/scanner/scanner.go:20030
+		// line internal/scanner/scanner.go:20036
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr817
@@ -21596,7 +21593,7 @@ func (lex *Lexer) Lex() *token.Token {
 			goto _test_eof530
 		}
 	st_case_530:
-		// line internal/scanner/scanner.go:20069
+		// line internal/scanner/scanner.go:20075
 		switch lex.data[(lex.p)] {
 		case 10:
 			goto tr819

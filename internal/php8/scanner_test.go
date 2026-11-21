@@ -2184,6 +2184,59 @@ func TestLoneCarriageReturn(test *testing.T) {
 	assert.Equal(test, len(errs), 0)
 }
 
+func TestStringVarPropertyEndsTheVariable(test *testing.T) {
+	src := `<?php "$a->b[0] $a->b->c"`
+
+	expected := []string{
+		token.ID(int('"')).String(),
+		token.T_VARIABLE.String(),
+		token.T_OBJECT_OPERATOR.String(),
+		token.T_STRING.String(),
+		token.T_ENCAPSED_AND_WHITESPACE.String(),
+		token.T_VARIABLE.String(),
+		token.T_OBJECT_OPERATOR.String(),
+		token.T_STRING.String(),
+		token.T_ENCAPSED_AND_WHITESPACE.String(),
+		token.ID(int('"')).String(),
+	}
+
+	expectedTokens := []string{
+		"\"",
+		"$a",
+		"->",
+		"b",
+		"[0] ",
+		"$a",
+		"->",
+		"b",
+		"->c",
+		"\"",
+	}
+
+	config := conf.Config{
+		Version: &version.Version{
+			Major: 8,
+			Minor: 4,
+		},
+	}
+	lexer := NewLexer([]byte(src), config)
+	actual := []string{}
+	actualTokens := []string{}
+
+	for {
+		tkn := lexer.Lex()
+		if tkn.ID == 0 {
+			break
+		}
+
+		actualTokens = append(actualTokens, string(tkn.Value))
+		actual = append(actual, tkn.ID.String())
+	}
+
+	assert.DeepEqual(test, expected, actual)
+	assert.DeepEqual(test, expectedTokens, actualTokens)
+}
+
 func TestStringOddBackslashRunEscapes(test *testing.T) {
 	src := `<?php "\\\"$a\\\$b $c"`
 
